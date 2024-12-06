@@ -3,7 +3,7 @@ defmodule AdventOfCode do
   @type day() :: pos_integer()
 
   def start(_type, _args) do
-    solve(2024, 4, false)
+    solve(2024, 5, false)
     {:ok, self()}
   end
 
