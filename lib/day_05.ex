@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day05 do
+  def motto, do: "Print Queue"
+
   def run(sample \\ true) do
     [rules, updates] = get_input(sample)
     |> String.split("\n\n")

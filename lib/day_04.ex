@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day04 do
+  def motto, do: "Ceres Search"
+
   def run(sample \\ true) do
     input = get_input(sample)
     |> String.split()
@@ -43,7 +45,6 @@ defmodule AdventOfCode.Y2024.Day04 do
     [
       [[{1, -1}, {1, 1}], [{-1, 1}, {-1, -1}]],
       [[{-1, -1}, {1, -1}], [{-1, 1}, {1, 1}]]
-    
     ]
     |> Enum.filter(fn [side1, side2] ->
       Enum.all?(side1, &matches?(grid, coords, &1, 1, "M")) &&
@@ -67,7 +68,7 @@ defmodule AdventOfCode.Y2024.Day04 do
     row
     |> String.split("", trim: true)
     |> Enum.with_index()
-    |> Enum.reduce(map, fn {col, x}, map -> 
+    |> Enum.reduce(map, fn {col, x}, map ->
       Map.put(map, {y + 1, x + 1}, col)
     end)
   end

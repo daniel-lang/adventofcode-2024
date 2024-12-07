@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day07 do
+  def motto, do: "Bridge Repair"
+
   def run(sample \\ true) do
     input =
       get_input(sample)

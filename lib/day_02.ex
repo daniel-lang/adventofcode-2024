@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day02 do
+  def motto, do: "Red-Nosed Reports"
+
   def run(sample \\ true) do
     input =
       get_input(sample)

@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day03 do
+  def motto, do: "Mull It Over"
+
   def run(sample \\ true) do
     input = get_input(sample)
     {run_part1(input), run_part2(input)}

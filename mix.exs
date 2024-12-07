@@ -22,7 +22,7 @@ defmodule Aoc.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-
+      {:table_rex, "~> 4.0.0"}
     ]
   end
 end

@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day06 do
+  def motto, do: "Guard Gallivant"
+
   def run(sample \\ true) do
     input =
       get_input(sample)

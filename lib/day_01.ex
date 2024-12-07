@@ -1,4 +1,6 @@
 defmodule AdventOfCode.Y2024.Day01 do
+  def motto, do: "Historian Hysteria"
+
   def run(sample \\ true) do
     input =
       get_input(sample)

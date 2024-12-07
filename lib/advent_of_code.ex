@@ -3,20 +3,24 @@ defmodule AdventOfCode do
   @type day() :: pos_integer()
 
   def start(_type, _args) do
-    IO.puts("Day 01 - Historian Hysteria")
-    solve(2024, 1, false)
-    IO.puts("\nDay 02 - Red-Nosed Reports")
-    solve(2024, 2, false)
-    IO.puts("\nDay 03 - Mull It Over")
-    solve(2024, 3, false)
-    IO.puts("\nDay 04 - Ceres Search")
-    solve(2024, 4, false)
-    IO.puts("\nDay 05 - Print Queue")
-    solve(2024, 5, false)
-    IO.puts("\nDay 06 - Guard Gallivant")
-    solve(2024, 6, false)
-    IO.puts("\nDay 07 - Bridge Repair")
-    solve(2024, 7, false)
+    header = ["Day", "Motto", "Time [ms]", "Part 1", "Part 2"]
+
+    rows = Enum.into(1..7, [], fn day ->
+      day_string =
+        day
+        |> Integer.to_string()
+        |> String.pad_leading(2, "0")
+
+      module = Module.concat([AdventOfCode, get_year_module(2024), get_day_module(day)])
+
+      {time, {p1, p2}} = :timer.tc(&module.run/1, [false], :millisecond)
+
+      [day_string, module.motto(), time, p1, p2]
+    end)
+
+    TableRex.quick_render!(rows, header)
+    |> IO.puts()
+
     {:ok, self()}
   end
 
