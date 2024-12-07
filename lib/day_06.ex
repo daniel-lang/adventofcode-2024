@@ -58,35 +58,12 @@ defmodule AdventOfCode.Y2024.Day06 do
   end
 
   defp loops?(start, dir, grid, width, height, directions, {rowObst, colObst}) do
-    result = case start == {rowObst, colObst} and Map.get(grid, {rowObst, colObst}, ".") != "#" do
+    case start == {rowObst, colObst} and Map.get(grid, {rowObst, colObst}, ".") != "#" do
       true -> 0
       false ->
         modified_grid = Map.replace(grid, {rowObst, colObst}, "#")
         move_p2(start, dir, modified_grid, width, height, directions, [])
     end
-
-    IO.puts("#{rowObst},#{colObst}: #{result}")
-    result
-  end
-
-  defp find_loops(start, dir, grid, width, height, directions, {rowObst, colObst}, loops) when rowObst < height and colObst < width do
-    loops = case start == {rowObst, colObst} and Map.get(grid, {rowObst, colObst}, ".") != "#" do
-      true -> loops
-      false ->
-        modified_grid = Map.replace(grid, {rowObst, colObst}, "#")
-        loops + move_p2(start, dir, modified_grid, width, height, directions, [])
-    end
-
-    if (colObst + 1 == width) do
-      IO.puts("finished row #{rowObst}")
-      find_loops(start, dir, grid, width, height, directions, {rowObst + 1, 0}, loops)
-    else
-      find_loops(start, dir, grid, width, height, directions, {rowObst, colObst + 1}, loops)
-    end
-  end
-
-  defp find_loops(_pos, _dir, _grid, _width, _height, _directions, _obst, loops) do
-    loops
   end
 
   defp move_p2({row, col}, dir, grid, width, height, directions, visited) when row >= 0 and row < height and col >= 0 and col < width do
