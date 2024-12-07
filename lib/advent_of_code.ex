@@ -3,6 +3,19 @@ defmodule AdventOfCode do
   @type day() :: pos_integer()
 
   def start(_type, _args) do
+    IO.puts("Day 01 - Historian Hysteria")
+    solve(2024, 1, false)
+    IO.puts("\nDay 02 - Red-Nosed Reports")
+    solve(2024, 2, false)
+    IO.puts("\nDay 03 - Mull It Over")
+    solve(2024, 3, false)
+    IO.puts("\nDay 04 - Ceres Search")
+    solve(2024, 4, false)
+    IO.puts("\nDay 05 - Print Queue")
+    solve(2024, 5, false)
+    IO.puts("\nDay 06 - Guard Gallivant")
+    solve(2024, 6, false)
+    IO.puts("\nDay 07 - Bridge Repair")
     solve(2024, 7, false)
     {:ok, self()}
   end
