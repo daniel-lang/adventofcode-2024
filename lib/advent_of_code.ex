@@ -5,7 +5,7 @@ defmodule AdventOfCode do
   def start(_type, _args) do
     header = ["Day", "Motto", "Time [ms]", "Part 1", "Part 2"]
 
-    rows = Enum.into(1..7, [], fn day ->
+    rows = Enum.into([1,2,3,4,5,6,7,9], [], fn day ->
       day_string =
         day
         |> Integer.to_string()
